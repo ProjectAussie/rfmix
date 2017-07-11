@@ -81,8 +81,9 @@ void GeneticMap::load_map(char *fname, char *chm) {
   qsort(tmp_map, n_pos, sizeof(map_pos_t), map_pos_compare);
   for(int i = 1; i < n_pos; i++) {
     if (tmp_map[i].genetic_pos < tmp_map[i-1].genetic_pos) {
-      fprintf(stderr,"\nSTOP: genetic map for chromosome %s is not strictly increasing.\n\n",
-	      chm);
+      fprintf(stderr,"\nSTOP: genetic map for chromosome %s is not strictly increasing", chm);
+      fprintf(stderr,"\nOffending marker 1 genetic position: %f physical position: %d", tmp_map[i-1].genetic_pos, tmp_map[i-1].seq_pos);
+      fprintf(stderr,"\nOffending marker 2 genetic position: %f physical position: %d \n\n", tmp_map[i].genetic_pos, tmp_map[i].seq_pos);
       exit(-1);
     }
   }
