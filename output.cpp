@@ -142,7 +142,10 @@ The first few columns specifies the chromosome, genetic marker's physical
 
 For example, for a rfmix run with 2 admixed genotype_ids run against 3 
 reference panel populations, the columns would be:
-  chromosome physical_position genetic_position genetic_marker_index 
+  chromosome
+  physical_position
+  genetic_position
+  genetic_marker_index 
   genotype_id1:::hap1:::subpop1
   genotype_id1:::hap1:::subpop2
   genotype_id1:::hap1:::subpop3

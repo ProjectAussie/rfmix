@@ -17,3 +17,23 @@ eg:
 The second line specifies the column names, and every following lines gives data on a chunk of the genome, called a conditional random field (CRF) point.
 
 The first four columns specify the chromosome, genetic marker's physical position in basepair units and genetic position in centiMorgans, and the genetic marker's numerical index in the rfmix genetic map input file. The remaining columns give the probabilities that the CRF point for a genotype's haplotype was assigned to a specific reference panel population. A genotype has two haplotypes, so the number of probabilities for a genotype is 2*(number of reference panel populations). The number of columns in the file is 4 + (number of genotypes) * 2 * (number of reference panel populations.
+
+
+For example, for a rfmix run with 2 admixed genotype_ids run against 3 reference panel populations, the columns would be:
+
+  chromosome
+  physical_position
+  genetic_position
+  genetic_marker_index
+  genotype_id1:::hap1:::subpop1
+  genotype_id1:::hap1:::subpop2
+  genotype_id1:::hap1:::subpop3
+  genotype_id1:::hap2:::subpop1
+  genotype_id1:::hap2:::subpop2
+  genotype_id1:::hap2:::subpop3
+  genotype_id2:::hap1:::subpop1
+  genotype_id2:::hap1:::subpop2
+  genotype_id2:::hap1:::subpop3
+  genotype_id2:::hap2:::subpop1
+  genotype_id2:::hap2:::subpop2
+  genotype_id2:::hap2:::subpop3
